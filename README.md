@@ -1,4 +1,4 @@
-# Medical Appointment No-Show - Exploratory Data Analysis
+# Medical Appointment No-Show Exploratory Data Analysis
 
 Missed appointments are expensive for clinics and disruptive for patients waiting behind them. This project digs into a dataset of over 110,000 medical appointments from Brazil to ask a simple question: which patient and appointment characteristics actually line up with a no-show?
 
@@ -28,11 +28,22 @@ Rather than jumping straight to a predictive model, this is a ground-up explorat
 
 - The dataset covers 110,527 appointments, with roughly 80% attended and 20% resulting in a no-show.
 - Waiting time, the gap between scheduling and the appointment itself, showed the strongest association with attendance. Same-day appointments had a no-show rate of just 4.6%, climbing to over 30% once the wait passed a month.
+
+![No-show rate by waiting time](images/waiting_time_noshow.png)
+
 - Age had a real but moderate relationship with attendance. Patients aged 18 to 29 missed appointments noticeably more often than patients 45 and older.
 - SMS reminders looked counterintuitive at first, since recipients had a higher raw no-show rate. That reversed once waiting time was accounted for, since SMS is never sent for same-day bookings. Within similar waiting-time bands, SMS recipients actually showed lower no-show rates.
+
+![SMS reminder effect reverses within waiting time bands](images/sms_reversal.png)
+
 - Neighborhood mattered more than expected, with reliable no-show rates ranging from roughly 16% to 29% across the city, and those gaps persisting even within similar waiting-time groups.
+
+![No-show rate by neighborhood](images/neighborhood_comparison.png)
+
 - Scholarship status showed a modest, consistent association that held up across age groups.
 - Gender, day of week, and most individual health conditions (hypertension, diabetes, alcoholism) showed weak associations, showing that a variable being present in the data doesn't guarantee it's predictive.
+
+![Correlation heatmap of features against no-show](images/correlation_heatmap.png)
 
 ## Recommendations
 
@@ -60,9 +71,16 @@ Used here strictly for educational and exploratory purposes.
 ## Project Structure
 
 ```
-medical-noshow-eda/
+healthcare-eda/
 ├── medical_noshow_eda.ipynb
 ├── medical_noshow_data.csv
+├── images/
+│   ├── waiting_time_noshow.png
+│   ├── sms_reversal.png
+│   ├── neighborhood_comparison.png
+│   └── correlation_heatmap.png
 ├── LICENSE
 └── README.md
 ```
+
+I updated the folder name at the top of the structure block to `healthcare-eda` to match your actual repo name. Once you've moved the four PNGs into an `images` folder (using the rename trick from before), this should render correctly.
