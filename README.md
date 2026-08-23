@@ -45,18 +45,18 @@ Rather than jumping straight to a predictive model, this is a ground-up explorat
 
 ![Correlation heatmap of features against no-show](images/correlation_heatmap.png)
 
-## Recommendations
-
-- Add a second reminder closer to the appointment date for bookings made far in advance, since no-show risk climbs the longer a patient waits.
-- Focus outreach efforts on patients aged 18 to 29, the group most likely to miss an appointment.
-- Look into what is actually driving higher no-show rates in specific neighborhoods, since the gap holds up even after accounting for waiting time.
-- Treat the scholarship gap as a question worth investigating further rather than something to act on directly, since the dataset does not explain why it exists.
-
 ## Limitations
 
 Please note that this is an associations-based analysis, not a causal one. Several variables are intertwined, SMS receipt and waiting time in particular, so raw comparisons can be misleading until confounders are checked. Some subgroups (certain neighborhoods, higher handicap levels) have very small sample sizes and shouldn't be over-interpreted. And since this project stops at exploration, it doesn't test how well any of these features would actually hold up predicting outcomes for new patients.
 
 A natural next step would be to take these findings and build out a classification model to see how well they generalize.
+
+## Potential Implications
+
+- The strong relationship between waiting time and no-shows suggests that appointment reminder strategies could be worth investigating for bookings made far in advance. This analysis does not establish that additional reminders would causally reduce no-shows.
+- The elevated no-show rate among patients aged 18 to 29 suggests this group may be worth prioritizing in future outreach research, though the underlying cause of the age difference isn't addressed here.
+- Neighborhood differences that persist across waiting-time groups point to factors outside this dataset, such as transportation access or clinic proximity, as areas worth investigating further.
+- The scholarship gap raises a question worth pursuing rather than a pattern to act on directly, since the dataset doesn't explain why it exists.
 
 ## Dataset
 
