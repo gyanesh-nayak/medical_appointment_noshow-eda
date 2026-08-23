@@ -71,7 +71,7 @@ Used here strictly for educational and exploratory purposes.
 ## Project Structure
 
 ```
-healthcare-eda/
+medical_appointment_noshow-eda/
 ├── medical_noshow_eda.ipynb
 ├── medical_noshow_data.csv
 ├── images/
