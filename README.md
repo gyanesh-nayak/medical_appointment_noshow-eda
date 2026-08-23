@@ -82,5 +82,3 @@ medical_appointment_noshow-eda/
 ├── LICENSE
 └── README.md
 ```
-
-I updated the folder name at the top of the structure block to `healthcare-eda` to match your actual repo name. Once you've moved the four PNGs into an `images` folder (using the rename trick from before), this should render correctly.
