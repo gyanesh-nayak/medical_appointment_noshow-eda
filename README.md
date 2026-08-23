@@ -63,5 +63,6 @@ Used here strictly for educational and exploratory purposes.
 medical-noshow-eda/
 ├── medical_noshow_eda.ipynb
 ├── medical_noshow_data.csv
+├── LICENSE
 └── README.md
 ```
