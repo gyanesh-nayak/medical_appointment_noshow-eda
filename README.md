@@ -53,7 +53,7 @@ A natural next step would be to take these findings and build out a classificati
 
 ## Potential Implications
 
-- Since wait time has the strongest link to no-shows, sending a second reminder closer to the appointment date (especially for bookings made far in advance) could be worth testing.
+- Since wait time has the strongest link to no-shows, sending a second SMS reminder closer to the appointment date (especially for bookings made far in advance) could be worth testing.
 - Patients aged 18 to 29 miss appointments more often than older patients, making them a reasonable group to prioritize in future outreach.
 - No-show rates vary by neighborhood even after accounting for wait time, suggesting outside factors like transportation access or clinic proximity are worth investigating.
 - Patients on the scholarship program show a consistent difference in no-show rates, though the dataset doesn't explain why.
