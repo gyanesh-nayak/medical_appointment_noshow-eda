@@ -27,21 +27,21 @@ Rather than jumping straight to a predictive model, this is a ground-up explorat
 ## Key Findings
 
 - The dataset covers 110,527 appointments, with roughly 80% attended and 20% resulting in a no-show.
-- Waiting time, the gap between scheduling and the appointment itself, showed the strongest association with attendance. Same-day appointments had a no-show rate of just 4.6%, climbing to over 30% once the wait passed a month.
+- Waiting time (the gap between scheduling and the appointment) showed the strongest association with attendance. Same-day appointments had a no-show rate of just 4.6%, climbing to over 30% once the wait passed a month.
 
 ![No-show rate by waiting time](images/waiting_time_noshow.png)
 
 - Age had a real but moderate relationship with attendance. Patients aged 18 to 29 missed appointments noticeably more often than patients 45 and older.
-- SMS reminders looked counterintuitive at first, since recipients had a higher raw no-show rate. That reversed once waiting time was accounted for, since SMS is never sent for same-day bookings. Within similar waiting-time bands, SMS recipients actually showed lower no-show rates.
+- SMS reminders looked counterintuitive at first, since recipients had a higher raw no-show rate. That's because SMS is never sent for same-day bookings, the group with the lowest no-show rate to begin with. Once waiting time is accounted for, SMS recipients actually show lower no-show rates.
 
 ![SMS reminder effect reverses within waiting time bands](images/sms_reversal.png)
 
-- Neighborhood mattered more than expected, with reliable no-show rates ranging from roughly 16% to 29% across the city, and those gaps persisting even within similar waiting-time groups.
+- Neighborhood mattered more than expected, with no-show rates ranging from roughly 16% to 29% across the city. These gaps held up even within similar waiting-time groups.
 
 ![No-show rate by neighborhood](images/neighborhood_comparison.png)
 
 - Scholarship status showed a modest, consistent association that held up across age groups.
-- Gender, day of week, and most individual health conditions (hypertension, diabetes, alcoholism) showed weak associations, showing that a variable being present in the data doesn't guarantee it's predictive.
+- Gender, day of week, and most individual health conditions (hypertension, diabetes, alcoholism) showed weak associations. This shows that a variable being present in the data doesn't guarantee it's predictive.
 
 ![Correlation heatmap of features against no-show](images/correlation_heatmap.png)
 
@@ -53,10 +53,10 @@ A natural next step would be to take these findings and build out a classificati
 
 ## Potential Implications
 
-- The strong relationship between waiting time and no-shows suggests that appointment reminder strategies could be worth investigating for bookings made far in advance. This analysis does not establish that additional reminders would causally reduce no-shows.
-- The elevated no-show rate among patients aged 18 to 29 suggests this group may be worth prioritizing in future outreach research, though the underlying cause of the age difference isn't addressed here.
-- Neighborhood differences that persist across waiting-time groups point to factors outside this dataset, such as transportation access or clinic proximity, as areas worth investigating further.
-- The scholarship gap raises a question worth pursuing rather than a pattern to act on directly, since the dataset doesn't explain why it exists.
+- Since wait time has the strongest link to no-shows, sending a second reminder closer to the appointment date (especially for bookings made far in advance) could be worth testing.
+- Patients aged 18 to 29 miss appointments more often than older patients, making them a reasonable group to prioritize in future outreach.
+- No-show rates vary by neighborhood even after accounting for wait time, suggesting outside factors like transportation access or clinic proximity are worth investigating.
+- Patients on the scholarship program show a consistent difference in no-show rates, though the dataset doesn't explain why.
 
 ## Dataset
 
