@@ -45,18 +45,28 @@ Rather than jumping straight to a predictive model, this is a ground-up explorat
 
 ![Correlation heatmap of features against no-show](images/correlation_heatmap.png)
 
-## Limitations
+## Context Beyond the Dataset
 
+While exploring this dataset, several questions came up that the data itself couldn't answer. I reviewed discussions with the dataset's creator on Kaggle, which confirmed some of these findings and flagged questions the dataset cannot answer.
+
+**Confirmed by the dataset creator:**
+- This data comes from Brazil's public healthcare sector (SUS), likely primary care. Healthcare is free at the point of use, meaning patients do not face a direct financial penalty for missing an appointment. This may help explain the relatively high no-show rate in this dataset (~20%).
+- Appointment specialty, time of day, and whether it was a patient's first visit with a provider are not included in this dataset. The creator himself suspects first-time visits and early-morning slots may be more prone to no-shows, but this hasn't been tested here.
+
+**Open questions raised by our own analysis:**
+- Same-day appointments show a dramatically lower no-show rate (4.6%) than longer-wait appointments. It's tempting to read this as "shorter wait time causes better attendance," but patients who receive same-day appointments may differ systematically from patients scheduled weeks in advance. They may have more urgency or availability that day. The real driver could be patient circumstances, not wait time itself.
+- Scholarship recipients (Bolsa Família, a government program for economically vulnerable families) show a consistent no-show gap. Since healthcare is already free, missing an appointment doesn't cost them money either. But these patients may face greater barriers, like commute, work schedules, or caregiving, that make it harder to show up. This variable might be picking up on accessibility issues, not a lack of intent to attend.
+
+## Limitations
 Please note that this is an association-based analysis, not a causal one. Several variables are intertwined, SMS receipt and waiting time in particular, so raw comparisons can be misleading until confounders are checked. Some subgroups (certain neighborhoods, higher handicap levels) have very small sample sizes and shouldn't be over-interpreted. And since this project stops at exploration, it doesn't test how well any of these features would actually hold up predicting outcomes for new patients.
 
 A natural next step would be to take these findings and build out a classification model to see how well they generalize.
 
 ## Potential Implications
-
-- Since wait time has the strongest link to no-shows, sending a second SMS reminder closer to the appointment date (especially for bookings made far in advance) could be worth testing.
-- Patients aged 18 to 29 miss appointments more often than older patients, making them a reasonable group to prioritize in future outreach.
-- No-show rates vary by neighborhood even after accounting for wait time, suggesting outside factors like transportation access or clinic proximity are worth investigating.
-- Patients on the scholarship program show a consistent difference in no-show rates, though the dataset doesn't explain why.
+- Since longer wait times are associated with higher no-show rates, a second SMS reminder closer to the appointment date (especially for bookings made far in advance) could be worth testing.
+- Patients aged 18 to 29 and patients enrolled in the scholarship program show higher no-show rates, making these groups potential targets for future outreach. Investigating the underlying reasons for these differences could also help create more targeted interventions.
+- No-show rates vary by neighborhood even after accounting for wait time, suggesting that factors like transportation access or clinic proximity are worth investigating.
+- Because appointment type/urgency isn't available in this dataset, the wait-time finding should be validated against appointment-type data before being used to justify scheduling changes.
 
 ## Dataset
 
