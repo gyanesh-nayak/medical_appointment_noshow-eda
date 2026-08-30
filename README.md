@@ -26,13 +26,13 @@ Rather than jumping straight to a predictive model, this is a ground-up explorat
 
 ## Key Findings
 
-- The dataset covers 110,527 appointments, with roughly 80% attended and 20% resulting in a no-show.
+- The dataset covers 110,527 appointments, with roughly 80% attendeding and 20% resulting in a no-show.
 - Waiting time (the gap between scheduling and the appointment) showed the strongest association with attendance. Same-day appointments had a no-show rate of just 4.6%, climbing to over 30% once the wait passed a month.
 
 ![No-show rate by waiting time](images/waiting_time_noshow.png)
 
-- Age had a real but moderate relationship with attendance. Patients aged 18 to 29 missed appointments noticeably more often than patients 45 and older.
-- SMS reminders looked counterintuitive at first, since recipients had a higher raw no-show rate. That's because SMS is never sent for same-day bookings, the group with the lowest no-show rate to begin with. Once waiting time is accounted for, SMS recipients actually show lower no-show rates.
+- Age had a moderate relationship with attendance. Patients aged 18 to 29 missed appointments noticeably more often than patients 45 and older.
+- At a first glance, SMS reminders had an association with higher raw no-show rate. However, upon further investigation, we found that SMS reminders are never sent to same-day bookings, which have the lowest no-show rate. When we account for waiting time, SMS recipients actually show lower no-show rates.
 
 ![SMS reminder effect reverses within waiting time bands](images/sms_reversal.png)
 
@@ -41,7 +41,7 @@ Rather than jumping straight to a predictive model, this is a ground-up explorat
 ![No-show rate by neighborhood](images/neighborhood_comparison.png)
 
 - Scholarship status showed a modest, consistent association that held up across age groups.
-- Gender, day of week, and most individual health conditions (hypertension, diabetes, alcoholism) showed weak associations. This shows that a variable being present in the data doesn't guarantee it's predictive.
+- Gender, day of week, and most individual health conditions (hypertension, diabetes, alcoholism) showed weak associations.
 
 ![Correlation heatmap of features against no-show](images/correlation_heatmap.png)
 
