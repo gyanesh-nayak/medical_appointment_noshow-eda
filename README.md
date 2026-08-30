@@ -49,7 +49,7 @@ Rather than jumping straight to a predictive model, this is a ground-up explorat
 
 While exploring this dataset, several questions came up that the data itself couldn't answer. I reviewed discussions with the dataset's creator on Kaggle, which confirmed some of these findings and flagged questions the dataset cannot answer.
 
-**Confirmed by the dataset creator:**
+**Confirmed from the dataset creator:**
 - This data comes from Brazil's public healthcare sector (SUS), likely primary care. Healthcare is free at the point of use, meaning patients do not face a direct financial penalty for missing an appointment. This may help explain the relatively high no-show rate in this dataset (~20%).
 - Appointment specialty, time of day, and whether it was a patient's first visit with a provider are not included in this dataset. The creator himself suspects first-time visits and early-morning slots may be more prone to no-shows, but this hasn't been tested here.
 
